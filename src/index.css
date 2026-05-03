@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #1a56db;
+  --color-brand-dark: #1e3a8a;
+  --color-brand-light: #3b82f6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f7f3ea;
+  color: #171717;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+@layer components {
+  .premium-page {
+    @apply bg-[#f7f3ea] text-[#171717];
+  }
+
+  .premium-container {
+    @apply mx-auto max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .premium-eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.28em] text-[#a34a28];
+  }
+
+  .premium-eyebrow-light {
+    @apply text-xs font-bold uppercase tracking-[0.28em] text-[#f4d35e];
+  }
+
+  .premium-heading {
+    @apply text-4xl font-semibold leading-tight tracking-normal text-[#171717] sm:text-5xl;
+  }
+
+  .premium-copy {
+    @apply text-lg leading-8 text-[#4a4338];
+  }
+
+  .premium-button {
+    @apply inline-flex min-h-12 items-center justify-center bg-black px-6 text-sm font-bold uppercase tracking-[0.18em] text-white transition-colors hover:bg-[#a34a28];
+  }
+
+  .premium-button-gold {
+    @apply inline-flex min-h-12 items-center justify-center bg-[#f4d35e] px-6 text-sm font-bold uppercase tracking-[0.18em] text-black transition-colors hover:bg-white;
+  }
+
+  .premium-button-outline {
+    @apply inline-flex min-h-12 items-center justify-center border border-current px-6 text-sm font-bold uppercase tracking-[0.18em] transition-colors;
+  }
+
+  .premium-hero {
+    @apply relative min-h-[calc(100vh-4rem)] overflow-hidden;
+  }
+
+  .premium-hero-content {
+    @apply relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl flex-col justify-end px-5 pb-16 pt-20 sm:px-8 lg:px-10;
+  }
+
+  .premium-photo {
+    @apply h-full w-full object-cover;
+  }
+}
