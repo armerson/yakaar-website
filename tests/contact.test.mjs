@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { POST } from '../api/contact.ts'
+import { contactTopics } from '../src/contactTopics.ts'
 
 const url = 'https://yakaar.example/api/contact'
 const valid = {
@@ -43,6 +44,11 @@ test('contact delivery validates input and never reports delivery without a prov
     })
     await t.test('rejects invalid topic', async () => {
       assert.equal((await POST(request({ ...valid, topic: 'Unknown' }))).status, 400)
+    })
+    await t.test('accepts every topic offered by the form', async () => {
+      for (const topic of contactTopics) {
+        assert.equal((await POST(request({ ...valid, topic }))).status, 503)
+      }
     })
     await t.test('returns unavailable when delivery is not configured', async () => {
       assert.equal((await POST(request(valid))).status, 503)

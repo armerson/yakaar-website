@@ -1,7 +1,13 @@
-import { isContactTopic } from '../src/contactTopics.ts'
-
 const recipient = 'rcuthbert@ambassadors-hope.org'
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const allowedTopics = new Set([
+  'General enquiry',
+  'Playing Tour',
+  'Coaching Support',
+  'Coach Development',
+  'Work Team',
+  'Sponsorship',
+])
 
 function json(body: object, status: number): Response {
   return Response.json(body, {
@@ -59,7 +65,7 @@ export async function POST(request: Request): Promise<Response> {
     name.length < 2 || name.length > 100 ||
     email.length > 254 || !emailPattern.test(email) ||
     message.length < 10 || message.length > 4000 ||
-    !isContactTopic(topic)
+    !topic || !allowedTopics.has(topic)
   ) {
     return json({ error: 'Please check the form fields' }, 400)
   }
