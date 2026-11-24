@@ -62,7 +62,7 @@ export default function FootballClub() {
         {programmes.map(({ title, desc, photo }, i) => (
           <article key={title} className="grid min-h-[560px] grid-cols-1 lg:grid-cols-2">
             <div className={i % 2 === 1 ? 'relative min-h-[420px] overflow-hidden lg:order-2' : 'relative min-h-[420px] overflow-hidden'}>
-              <img src={photo} alt={title} className="absolute inset-0 h-full w-full object-cover" />
+              <img loading="lazy" decoding="async" src={photo} alt={title} className="absolute inset-0 h-full w-full object-cover" />
             </div>
             <div className="flex items-center bg-[#fffaf0] px-5 py-14 sm:px-8 lg:px-16">
               <div className="max-w-xl">
@@ -99,13 +99,13 @@ export default function FootballClub() {
         </div>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {actionPhotos.map((src, i) => (
-            <img key={i} src={src} alt={`Action ${i + 1}`} className="h-56 w-full object-cover" />
+            <img loading="lazy" decoding="async" key={i} src={src} alt={`Action ${i + 1}`} className="h-56 w-full object-cover" />
           ))}
         </div>
       </section>
 
       <section className="relative min-h-[520px] overflow-hidden">
-        <img src="/images/photo-11.jpg" alt="Academy players" className="absolute inset-0 h-full w-full object-cover object-top" />
+        <img loading="lazy" decoding="async" src="/images/photo-11.jpg" alt="Academy players" className="absolute inset-0 h-full w-full object-cover object-top" />
         <div className="absolute inset-0 bg-black/65" />
         <div className="premium-container relative z-10 flex min-h-[520px] items-center justify-center text-center text-white">
           <div className="max-w-2xl">
@@ -113,7 +113,7 @@ export default function FootballClub() {
             <p className="mt-6 text-lg leading-8 text-white/78">
               For just £10 per month, you can sponsor an academy player and help them access training, kit, and mentorship.
             </p>
-            <Link to="/sponsor" className="premium-button-gold mt-9">
+            <Link to="/give?purpose=player" className="premium-button-gold mt-9">
               Become an Academy Sponsor
             </Link>
           </div>

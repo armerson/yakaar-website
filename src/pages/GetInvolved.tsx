@@ -1,26 +1,30 @@
 import { Link } from 'react-router-dom'
+import ContactForm from '../components/ContactForm'
 
 const opportunities = [
   {
     title: 'Playing Tours',
     desc: 'Bring a team to Senegal to play, serve, and connect. An unforgettable experience that blesses both visitors and our local community.',
     cta: 'Enquire About a Tour',
+    link: '/contact?topic=Playing%20Tour',
   },
   {
     title: 'Coaching Support',
     desc: 'Use your football experience to mentor and develop players. Whether for a week or a season, your contribution makes a real difference.',
     cta: 'Offer Coaching Support',
+    link: '/contact?topic=Coaching%20Support',
   },
   {
     title: 'Work Teams',
     desc: 'Help improve our facilities and support practical projects. Skilled and unskilled volunteers are both welcome and needed.',
     cta: 'Join a Work Team',
+    link: '/contact?topic=Work%20Team',
   },
   {
     title: 'Sponsorship',
     desc: 'Support players, programmes, and facility development for as little as £10 per month.',
     cta: 'Sponsor a Player',
-    link: '/sponsor',
+    link: '/give?purpose=player',
   },
 ]
 
@@ -68,15 +72,7 @@ export default function GetInvolved() {
               <p className="premium-eyebrow">0{index + 1}</p>
               <h3 className="mt-4 text-2xl font-semibold">{title}</h3>
               <p className="mt-4 flex-1 text-sm leading-6 text-[#4a4338]">{desc}</p>
-              {link ? (
-                <Link to={link} className="premium-button mt-8 w-full">
-                  {cta}
-                </Link>
-              ) : (
-                <a href={`mailto:info@yaakarfootball.org?subject=${encodeURIComponent(cta)}`} className="premium-button mt-8 w-full">
-                  {cta}
-                </a>
-              )}
+              <Link to={link} className="premium-button mt-8 w-full">{cta}</Link>
             </article>
           ))}
         </div>
@@ -89,50 +85,19 @@ export default function GetInvolved() {
           <p className="premium-copy mt-6">
             Whether you're looking to visit, partner, give, or simply find out more — we would love to hear from you. Reach out and let's start the conversation.
           </p>
-          <div className="mt-8 space-y-3 text-[#4a4338]">
-            <a href="mailto:info@yaakarfootball.org" className="block text-lg font-semibold text-[#171717] hover:text-[#a34a28]">
-              info@yaakarfootball.org
-            </a>
-            <p>Senegal, West Africa</p>
-          </div>
+          <p className="mt-8 text-[#4a4338]">Senegal, West Africa</p>
         </div>
 
         <div className="bg-[#171717] p-8 text-white">
-          <h3 className="text-3xl font-semibold">Send Us a Message</h3>
-          <form action="mailto:info@yaakarfootball.org" method="post" encType="text/plain" className="mt-8 space-y-5">
-            <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-[0.16em] text-white/62">Your Name</label>
-              <input type="text" name="name" required className="w-full border border-white/[0.18] bg-white/[0.08] px-4 py-3 text-white outline-none focus:border-[#f4d35e]" placeholder="Robert Smith" />
-            </div>
-            <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-[0.16em] text-white/62">Email Address</label>
-              <input type="email" name="email" required className="w-full border border-white/[0.18] bg-white/[0.08] px-4 py-3 text-white outline-none focus:border-[#f4d35e]" placeholder="you@example.com" />
-            </div>
-            <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-[0.16em] text-white/62">How can we help?</label>
-              <select name="interest" className="w-full border border-white/[0.18] bg-[#171717] px-4 py-3 text-white outline-none focus:border-[#f4d35e]">
-                <option>Playing Tour</option>
-                <option>Coaching Support</option>
-                <option>Work Team</option>
-                <option>Sponsorship</option>
-                <option>General Enquiry</option>
-              </select>
-            </div>
-            <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-[0.16em] text-white/62">Message</label>
-              <textarea name="message" rows={4} className="w-full resize-none border border-white/[0.18] bg-white/[0.08] px-4 py-3 text-white outline-none focus:border-[#f4d35e]" placeholder="Tell us a bit about yourself and how you'd like to get involved..." />
-            </div>
-            <button type="submit" className="premium-button-gold w-full">
-              Send Message
-            </button>
-          </form>
+          <h3 className="mb-7 text-3xl font-semibold">Send a message</h3>
+          <ContactForm />
         </div>
       </section>
 
       <section className="premium-container pb-20">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {communityPhotos.map((src, i) => (
-            <img key={i} src={src} alt={`Community ${i + 1}`} className="h-64 w-full object-cover" />
+            <img loading="lazy" decoding="async" key={i} src={src} alt={`Community ${i + 1}`} className="h-64 w-full object-cover" />
           ))}
         </div>
       </section>

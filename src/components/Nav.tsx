@@ -42,15 +42,18 @@ export default function Nav() {
 
           <div className="flex items-center gap-3">
             <Link
-              to="/sponsor"
+              to="/give?purpose=player"
               className="hidden min-h-10 items-center bg-black px-4 text-xs font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-[#a34a28] sm:inline-flex"
             >
               Sponsor a Player
             </Link>
             <button
               onClick={() => setOpen(!open)}
-              className="lg:hidden p-2 text-[#171717] hover:bg-black/5"
-              aria-label="Toggle menu"
+              className="lg:hidden p-2 text-[#171717] hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a34a28]"
+              aria-label={open ? 'Close menu' : 'Open menu'}
+              aria-expanded={open}
+              aria-controls="mobile-navigation"
+              type="button"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {open
@@ -64,8 +67,7 @@ export default function Nav() {
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <div className="lg:hidden border-t border-black/10 bg-[#f7f3ea] px-4 py-3 space-y-1">
+        <div id="mobile-navigation" hidden={!open} className="lg:hidden border-t border-black/10 bg-[#f7f3ea] px-4 py-3 space-y-1">
           {links.map(({ to, label }) => (
             <NavLink
               key={to}
@@ -81,14 +83,13 @@ export default function Nav() {
             </NavLink>
           ))}
           <Link
-            to="/sponsor"
+            to="/give?purpose=player"
             onClick={() => setOpen(false)}
             className="mt-2 block bg-black px-3 py-3 text-center text-sm font-bold uppercase tracking-[0.14em] text-white"
           >
             Sponsor a Player
           </Link>
         </div>
-      )}
     </header>
   )
 }

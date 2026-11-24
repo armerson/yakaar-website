@@ -23,7 +23,7 @@ export default function Footer() {
                 { to: '/football-club', label: 'Football Club' },
                 { to: '/coaches-training', label: 'Coaches Training' },
                 { to: '/hope-football-centre', label: 'Hope Football Centre' },
-                { to: '/sponsor', label: 'Sponsor a Player' },
+                { to: '/give?purpose=player', label: 'Sponsor a Player' },
                 { to: '/get-involved', label: 'Get Involved' },
               ].map(({ to, label }) => (
                 <li key={to}>
@@ -39,7 +39,7 @@ export default function Footer() {
               Want to partner with us, visit, or find out more? We'd love to hear from you.
             </p>
             <Link
-              to="/get-involved"
+              to="/contact"
               className="inline-flex min-h-11 items-center bg-[#f4d35e] px-5 text-xs font-bold uppercase tracking-[0.16em] text-black transition-colors hover:bg-white"
             >
               Contact Us

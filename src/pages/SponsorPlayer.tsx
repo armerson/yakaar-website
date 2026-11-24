@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const includes = [
   'Playing kit',
   'Training equipment',
@@ -48,14 +50,14 @@ export default function SponsorPlayer() {
           <blockquote className="mt-9 border-l-4 border-[#a34a28] pl-6 text-xl leading-9 text-[#171717]">
             "Through coaching, encouragement, and mentorship, we help each young person grow in confidence, technical ability, character, leadership, and faith."
           </blockquote>
-          <a href="mailto:info@yaakarfootball.org?subject=Sponsor a Player" className="premium-button mt-9">
+          <Link to="/give?purpose=player" className="premium-button mt-9">
             Become an Academy Sponsor
-          </a>
-          <p className="mt-4 text-sm text-[#6b6254]">Get in touch and we'll set up your monthly sponsorship.</p>
+          </Link>
+          <p className="mt-4 text-sm text-[#6b6254]">Choose where you are giving from to see the current payment setup status.</p>
         </div>
 
         <aside className="bg-[#171717] text-white">
-          <img src="/images/photo-11.jpg" alt="Players" className="h-80 w-full object-cover object-top opacity-90" />
+          <img loading="lazy" decoding="async" src="/images/photo-11.jpg" alt="Players" className="h-80 w-full object-cover object-top opacity-90" />
           <div className="p-8">
             <div className="text-6xl font-semibold text-[#f4d35e]">£10</div>
             <div className="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-white/64">per month · per player</div>
@@ -79,7 +81,7 @@ export default function SponsorPlayer() {
       <section className="premium-container pb-20">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {sponsorPhotos.map((src, i) => (
-            <img key={i} src={src} alt={`Player ${i + 1}`} className="h-64 w-full object-cover object-top" />
+            <img loading="lazy" decoding="async" key={i} src={src} alt={`Player ${i + 1}`} className="h-64 w-full object-cover object-top" />
           ))}
         </div>
       </section>
