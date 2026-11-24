@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const courseComponents = [
   { title: 'Practical Coaching Tools', desc: 'Hands-on drills, session planning, and coaching frameworks you can use immediately in your programmes.' },
   { title: 'Leadership Development', desc: 'Equipping you to lead with integrity, build teams, and create environments where young people flourish.' },
@@ -44,9 +46,9 @@ export default function CoachesTraining() {
           </div>
         </div>
         <div className="grid min-h-[560px] grid-cols-2 gap-3">
-          <img src="/images/photo-01.jpg" alt="Coaching session" className="col-span-2 h-72 w-full object-cover" />
-          <img src="/images/photo-06.jpg" alt="Training drill" className="h-full min-h-64 w-full object-cover" />
-          <img src="/images/photo-22.jpg" alt="Team" className="h-full min-h-64 w-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/photo-01.jpg" alt="Coaching session" className="col-span-2 h-72 w-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/photo-06.jpg" alt="Training drill" className="h-full min-h-64 w-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/photo-22.jpg" alt="Team" className="h-full min-h-64 w-full object-cover" />
         </div>
       </section>
 
@@ -72,7 +74,7 @@ export default function CoachesTraining() {
       </section>
 
       <section className="relative min-h-[540px] overflow-hidden">
-        <img src="/images/photo-04.jpg" alt="Football" className="absolute inset-0 h-full w-full object-cover" />
+        <img loading="lazy" decoding="async" src="/images/photo-04.jpg" alt="Football" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/68" />
         <div className="premium-container relative z-10 flex min-h-[540px] items-center justify-center text-center text-white">
           <div className="max-w-4xl">
@@ -87,7 +89,7 @@ export default function CoachesTraining() {
       <section className="premium-container py-20">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {trainingPhotos.map((src, i) => (
-            <img key={i} src={src} alt={`Training ${i + 1}`} className="h-64 w-full object-cover" />
+            <img loading="lazy" decoding="async" key={i} src={src} alt={`Training ${i + 1}`} className="h-64 w-full object-cover" />
           ))}
         </div>
       </section>
@@ -98,9 +100,9 @@ export default function CoachesTraining() {
           <p className="mt-6 text-lg leading-8 text-white/72">
             If you share our heart for seeing young people flourish through football, we'd love to hear from you. Applications for our next cohort are now open.
           </p>
-          <a href="mailto:info@yaakarfootball.org?subject=Coach Development Programme Application" className="premium-button-gold mt-9">
+          <Link to="/contact?topic=Coach%20Development" className="premium-button-gold mt-9">
             Apply for Training
-          </a>
+          </Link>
         </div>
       </section>
     </div>

@@ -63,9 +63,9 @@ export default function About() {
           </div>
         </div>
         <div className="grid min-h-[560px] grid-cols-2 gap-3">
-          <img src="/images/photo-04.jpg" alt="Yakaar players" className="col-span-2 h-72 w-full object-cover" />
-          <img src="/images/photo-09.jpg" alt="Community" className="h-full min-h-64 w-full object-cover" />
-          <img src="/images/photo-14.jpg" alt="Training" className="h-full min-h-64 w-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/photo-04.jpg" alt="Yakaar players" className="col-span-2 h-72 w-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/photo-09.jpg" alt="Community" className="h-full min-h-64 w-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/photo-14.jpg" alt="Training" className="h-full min-h-64 w-full object-cover" />
         </div>
       </section>
 
@@ -98,7 +98,7 @@ export default function About() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {team.map(({ name, role, bio, photo }) => (
             <article key={name} className="bg-[#fffaf0]">
-              <img src={photo} alt={name} className="h-72 w-full object-cover object-top" />
+              <img loading="lazy" decoding="async" src={photo} alt={name} className="h-72 w-full object-cover object-top" />
               <div className="p-7">
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#a34a28]">{role}</p>
                 <h3 className="mt-2 text-2xl font-semibold">{name}</h3>
@@ -110,7 +110,7 @@ export default function About() {
       </section>
 
       <section className="relative min-h-[560px] overflow-hidden">
-        <img src="/images/photo-04.jpg" alt="Yakaar impact" className="absolute inset-0 h-full w-full object-cover" />
+        <img loading="lazy" decoding="async" src="/images/photo-04.jpg" alt="Yakaar impact" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/62" />
         <div className="premium-container relative z-10 flex min-h-[560px] items-center justify-center text-center text-white">
           <div className="max-w-3xl">
@@ -126,7 +126,7 @@ export default function About() {
       <section className="premium-container py-20">
         <div className="columns-2 gap-3 space-y-3 sm:columns-3">
           {galleryImages.map((src, i) => (
-            <img key={i} src={src} alt={`Yakaar ${i + 1}`} className="w-full break-inside-avoid object-cover" />
+            <img loading="lazy" decoding="async" key={i} src={src} alt={`Yakaar ${i + 1}`} className="w-full break-inside-avoid object-cover" />
           ))}
         </div>
       </section>

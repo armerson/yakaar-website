@@ -55,13 +55,13 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link to="/sponsor" className="premium-button-gold">
+            <Link to="/give?purpose=player" className="premium-button-gold">
               Sponsor a Player
             </Link>
             <Link to="/get-involved" className="premium-button-outline border-white/65 text-white hover:bg-white hover:text-black">
               Get Involved
             </Link>
-            <Link to="/hope-football-centre" className="premium-button-outline border-white/65 text-white hover:bg-white hover:text-black">
+            <Link to="/give?purpose=general" className="premium-button-outline border-white/65 text-white hover:bg-white hover:text-black">
               Support the Mission
             </Link>
           </div>
@@ -94,9 +94,9 @@ export default function Home() {
           </Link>
         </div>
         <div className="grid min-h-[560px] grid-cols-2 gap-3">
-          <img src="/images/photo-22.jpg" alt="Community outreach" className="col-span-2 h-72 w-full object-cover" />
-          <img src="/images/photo-06.jpg" alt="Player training" className="h-full min-h-64 w-full object-cover" />
-          <img src="/images/photo-33.jpg" alt="Match action" className="h-full min-h-64 w-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/photo-22.jpg" alt="Community outreach" className="col-span-2 h-72 w-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/photo-06.jpg" alt="Player training" className="h-full min-h-64 w-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/photo-33.jpg" alt="Match action" className="h-full min-h-64 w-full object-cover" />
         </div>
       </section>
 
@@ -108,7 +108,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-4">
           {programmes.map(({ title, desc, photo }, index) => (
             <article key={title} className="group relative min-h-[520px] overflow-hidden">
-              <img src={photo} alt={title} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <img loading="lazy" decoding="async" src={photo} alt={title} className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/24 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-7 text-white sm:p-9">
                 <p className="premium-eyebrow-light">0{index + 1}</p>
@@ -121,7 +121,7 @@ export default function Home() {
       </section>
 
       <section className="relative min-h-[560px] overflow-hidden">
-        <img src="/images/photo-27.jpg" alt="Match action" className="absolute inset-0 h-full w-full object-cover object-center" />
+        <img loading="lazy" decoding="async" src="/images/photo-27.jpg" alt="Match action" className="absolute inset-0 h-full w-full object-cover object-center" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/78 via-black/35 to-transparent" />
         <div className="premium-container relative z-10 flex min-h-[560px] items-center">
           <div className="max-w-2xl text-white">
@@ -137,7 +137,7 @@ export default function Home() {
 
       <section className="premium-container grid gap-12 py-20 lg:grid-cols-[1fr_1fr] lg:items-center">
         <div className="relative min-h-[560px] overflow-hidden bg-black">
-          <img src="/images/photo-11.jpg" alt="Academy players" className="absolute inset-0 h-full w-full object-cover object-top" />
+          <img loading="lazy" decoding="async" src="/images/photo-11.jpg" alt="Academy players" className="absolute inset-0 h-full w-full object-cover object-top" />
           <div className="absolute bottom-0 right-0 bg-[#f4d35e] px-8 py-6 text-black">
             <div className="text-5xl font-semibold">£10</div>
             <div className="text-xs font-bold uppercase tracking-[0.18em]">per month</div>
@@ -154,14 +154,14 @@ export default function Home() {
               <li key={item} className="text-[#4a4338]">{item}</li>
             ))}
           </ul>
-          <Link to="/sponsor" className="premium-button mt-9">
+          <Link to="/give?purpose=player" className="premium-button mt-9">
             Become an Academy Sponsor
           </Link>
         </div>
       </section>
 
       <section className="relative min-h-[620px] overflow-hidden">
-        <img src="/images/photo-01.jpg" alt="Football pitch" className="absolute inset-0 h-full w-full object-cover" />
+        <img loading="lazy" decoding="async" src="/images/photo-01.jpg" alt="Football pitch" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/55" />
         <div className="premium-container relative z-10 flex min-h-[620px] items-end py-16 text-white">
           <div className="max-w-3xl">
@@ -179,7 +179,7 @@ export default function Home() {
                 <div className="h-2 bg-[#f4d35e]" style={{ width: '78%' }} />
               </div>
             </div>
-            <Link to="/hope-football-centre" className="premium-button-gold mt-9">
+            <Link to="/give?purpose=centre" className="premium-button-gold mt-9">
               Support the Hope Football Centre
             </Link>
           </div>
@@ -193,7 +193,7 @@ export default function Home() {
         </div>
         <div className="columns-2 gap-3 space-y-3 sm:columns-3 lg:columns-4">
           {galleryImages.map((src, i) => (
-            <img key={i} src={src} alt={`Yakaar Football moment ${i + 1}`} className="w-full break-inside-avoid object-cover" />
+            <img loading="lazy" decoding="async" key={i} src={src} alt={`Yakaar Football moment ${i + 1}`} className="w-full break-inside-avoid object-cover" />
           ))}
         </div>
       </section>
@@ -208,7 +208,7 @@ export default function Home() {
             <Link to="/get-involved" className="premium-button-gold">
               Get Involved
             </Link>
-            <Link to="/sponsor" className="premium-button-outline border-white/60 text-white hover:bg-white hover:text-black">
+            <Link to="/give?purpose=player" className="premium-button-outline border-white/60 text-white hover:bg-white hover:text-black">
               Sponsor a Player
             </Link>
           </div>

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const benefits = [
   'A safe and reliable space for academy training',
   'Improved playing conditions year-round',
@@ -63,19 +65,19 @@ export default function HopeFootballCentre() {
               <li key={b} className="py-4 text-[#4a4338]">{b}</li>
             ))}
           </ul>
-          <a href="mailto:info@yaakarfootball.org?subject=Hope Football Centre Donation" className="premium-button mt-9">
+          <Link to="/give?purpose=centre" className="premium-button mt-9">
             Support the Hope Football Centre
-          </a>
+          </Link>
         </div>
         <div className="grid min-h-[560px] grid-cols-2 gap-3">
-          <img src="/images/photo-28.jpg" alt="Football action" className="col-span-2 h-72 w-full object-cover" />
-          <img src="/images/photo-31.jpg" alt="Training" className="h-full min-h-64 w-full object-cover" />
-          <img src="/images/photo-34.jpg" alt="Match" className="h-full min-h-64 w-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/photo-28.jpg" alt="Football action" className="col-span-2 h-72 w-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/photo-31.jpg" alt="Training" className="h-full min-h-64 w-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/photo-34.jpg" alt="Match" className="h-full min-h-64 w-full object-cover" />
         </div>
       </section>
 
       <section className="relative min-h-[540px] overflow-hidden">
-        <img src="/images/photo-32.jpg" alt="Players on pitch" className="absolute inset-0 h-full w-full object-cover" />
+        <img loading="lazy" decoding="async" src="/images/photo-32.jpg" alt="Players on pitch" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/58" />
         <div className="premium-container relative z-10 flex min-h-[540px] items-center justify-center text-center text-white">
           <p className="max-w-4xl text-4xl font-semibold leading-tight sm:text-6xl">
@@ -90,9 +92,9 @@ export default function HopeFootballCentre() {
           <p className="mt-6 text-lg leading-8 text-white/72">
             Thanks to generous supporters, we are close to making this vision a reality. Your support will help complete a facility that will impact generations of young people in Senegal.
           </p>
-          <a href="mailto:info@yaakarfootball.org?subject=Hope Football Centre Donation" className="premium-button-gold mt-9">
+          <Link to="/give?purpose=centre" className="premium-button-gold mt-9">
             Make a Donation
-          </a>
+          </Link>
         </div>
       </section>
     </div>
